@@ -1,7 +1,7 @@
 # Личный проект «Кексобукинг»
 
 * Студент: [Danil Belov](https://up.htmlacademy.ru/javascript/22/user/1462331).
-* Наставник: `Неизвестно`.
+* Наставник: [Виктор Кан](https://htmlacademy.ru/profile/viktorkan).
 
 ---
 
