@@ -16,6 +16,10 @@ function getRandomFloatNumber(min, max, floatingSigns) {
     throw new Error('Диапазон должен быть положительным, включая ноль, а также значение "до" должно быть меньше значения "от"');
   }
 
+  if (max == min) {
+    return max;
+  }
+
   const randomFloatNumber = min + (Math.random() * (max - min + 1));
   const cutFloatNumber = randomFloatNumber.toFixed(floatingSigns);
   return cutFloatNumber;
