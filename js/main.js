@@ -1,32 +1,22 @@
 function getRandomNumber(min, max) {
   if (min < 0 || max < 0) {
-    console.log('Диапазон должен быть положительным, включая ноль');
-    return;
+    throw new Error('Диапазон должен быть положительным, включая ноль, а также значение "до" должно быть меньше значения "от"');
   }
 
-  if (max < min) {
-    let swap = max;
-    max = min;
-    min = swap;
+  if (max == min) {
+    return max;
   }
 
-  if (max == min) return max;
-
-  let randomNumber = min + (Math.random() * (max - min + 1));
+  const randomNumber = min + (Math.random() * (max - min + 1));
   return Math.floor(randomNumber);
 }
 
 function getRandomFloatNumber(min, max, floatingSigns) {
-  if (min < 0 || max < 0) {
-    console.log('Диапазон должен быть положительным, включая ноль');
-    return;
+  if (min < 0 || max < 0 || max < min) {
+    throw new Error('Диапазон должен быть положительным, включая ноль, а также значение "до" должно быть меньше значения "от"');
   }
 
-  if (max < min) {
-    let swap = max;
-    max = min;
-    min = swap;
-  }
-
-  let randomNumber = getRandomNumber(min, max);
+  const randomFloatNumber = min + (Math.random() * (max - min + 1));
+  const cutFloatNumber = randomFloatNumber.toFixed(floatingSigns);
+  return cutFloatNumber;
 }
